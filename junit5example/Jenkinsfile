@@ -14,6 +14,7 @@ pipeline {
             steps{
                 whithMaven(maven: 'maven_3_8_4'){
                     sh 'mvn test'
+				}
             }
         }
 
@@ -21,6 +22,7 @@ pipeline {
             steps{
                 whithMaven(maven: 'maven_3_8_4'){
                     sh 'mvn deploy'
+				}
             }
         }
     }
