@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage ('comile stage') {
+            steps{
+                whithMaven(maven: 'maven_3_8_4'){
+                    sh 'mvn clean comile'
+                }
+            }
+
+        }
+        
+        stage ('Testing Stage') {
+            steps{
+                whithMaven(maven: 'maven_3_8_4'){
+                    sh 'mvn test'
+            }
+        }
+
+        stage ('Deploy Stage') {
+            steps{
+                whithMaven(maven: 'maven_3_8_4'){
+                    sh 'mvn deploy'
+            }
+        }
+    }
+}
