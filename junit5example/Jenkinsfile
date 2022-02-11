@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('comile stage') {
             steps{
-                whithMaven(maven: 'maven_3_8_4'){
+                withMaven(maven: 'maven_3_8_4'){
                     sh 'mvn clean comile'
                 }
             }
@@ -12,7 +12,7 @@ pipeline {
         
         stage ('Testing Stage') {
             steps{
-                whithMaven(maven: 'maven_3_8_4'){
+                withMaven(maven: 'maven_3_8_4'){
                     sh 'mvn test'
 				}
             }
@@ -20,7 +20,7 @@ pipeline {
 
         stage ('Deploy Stage') {
             steps{
-                whithMaven(maven: 'maven_3_8_4'){
+                withMaven(maven: 'maven_3_8_4'){
                     sh 'mvn deploy'
 				}
             }
