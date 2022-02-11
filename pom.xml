@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fuhu</groupId>
+
+    <artifactId>jenkins-test</artifactId>
+    <packaging>pom</packaging>
+    <version>1.1-SNAPSHOT</version>
+    <name>jenkins-test</name>
+
+    <properties>
+        <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
+        <maven-clean-plugin.version>2.6</maven-clean-plugin.version>      
+        <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+		<maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>junit5example</module>
+           </modules>
+        </profile>
+    </profiles>
+</project>
+
